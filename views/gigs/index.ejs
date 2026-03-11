@@ -1,5 +1,37 @@
 <% layout('layouts/boilerplate.ejs') %>
 
-<% for(let gig of gigs) {%>
-<p><%=gig.title%></p>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 mt-4">
+
+<% for(let gig of gigs) { %>
+
+<div class="col">
+
+<div class="card gig-card h-100">
+
+<a href="/gigs/<%= gig.id %>">
+<img src="<%= gig.image %>" class="card-img-top" alt="gig image">
+</a>
+
+<div class="card-body">
+
+<img src="/assets/profile-pic.avif" class="pfp-pic">
+
+<h5 class="card-title"><%= gig.title %></h5>
+
+<p class="card-text">
+<%= gig.description.slice(0,70) %>...
+</p>
+
+<a href="#" class="btn btn-outline-success">
+Book for ₹ <%= gig.price.toLocaleString("en-IN") %>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 <% } %>
+
+</div>

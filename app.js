@@ -20,9 +20,9 @@ app.get("/", (req, res) => {
   res.send("Fiverr App Working");
 });
 
+// Index Route
 app.get("/gigs", async (req, res, next) => {
   const gigs = await Gig.find();
-  console.log(gigs);
   res.render("gigs/index", { gigs });
 });
 
