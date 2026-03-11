@@ -3,7 +3,10 @@ const app = express();
 const methodOverride = require("method-override");
 const path = require("path");
 const mongoose = require("mongoose");
-const gigSchema = require("./models/gig");
+const Gig = require("./models/gig");
+const ejsMate = require("ejs-mate");
+
+app.engine("ejs", ejsMate);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -17,15 +20,9 @@ app.get("/", (req, res) => {
   res.send("Fiverr App Working");
 });
 
-// Fake data
-const sampleGig = new gigSchema({
-  title: "Build a MERN website",
-  description: "I will build a full stack website",
-  price: 5000,
-  category: "web dev",
-});
-sampleGig.save().then(() => {
-  console.log("saved");
+app.get("/gigs", async (req, res, next) => {
+  const gigs = await Gig.find();
+  res.render("gigs/index", { gigs });
 });
 
 // Port defining and DB connection

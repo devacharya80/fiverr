@@ -1,0 +1,15 @@
+body {
+  font-family: Arial !important;
+}
+
+nav {
+  padding: 2rem !important;
+}
+
+.nav-link:hover {
+  color: #1dbf73 !important;
+}
+
+form input {
+  width: 300px;
+}
