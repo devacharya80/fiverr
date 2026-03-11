@@ -10,6 +10,14 @@ nav {
   color: #1dbf73 !important;
 }
 
-form input {
-  width: 300px;
+.search-bar {
+  width: 40% !important;
+}
+
+.search-bar input {
+  border-radius: 20px !important;
+}
+
+.search-bar button {
+  border-radius: 1rem !important;
 }
