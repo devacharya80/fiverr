@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
 
 app.get("/gigs", async (req, res, next) => {
   const gigs = await Gig.find();
+  console.log(gigs);
   res.render("gigs/index", { gigs });
 });
 

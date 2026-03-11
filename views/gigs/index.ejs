@@ -1,1 +1,5 @@
 <% layout('layouts/boilerplate.ejs') %>
+
+<% for(let gig of gigs) {%>
+<p><%=gig.title%></p>
+<% } %>

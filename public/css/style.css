@@ -1,7 +1,28 @@
+html,
 body {
-  font-family: Arial !important;
+  height: 100%;
 }
 
+main {
+  margin-top: 1rem;
+}
+
+body {
+  font-family: Arial !important;
+  /* padding-top: 80px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* navbar */
 nav {
   padding: 2rem !important;
 }
@@ -20,4 +41,33 @@ nav {
 
 .search-bar button {
   border-radius: 1rem !important;
+}
+
+/* footer */
+
+.footer {
+  padding: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  margin-left: 15px;
+  font-size: 20px;
+  color: black;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: #1dbf73;
 }
