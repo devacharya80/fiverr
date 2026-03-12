@@ -26,6 +26,19 @@ app.get("/gigs", async (req, res, next) => {
   res.render("gigs/index", { gigs });
 });
 
+// new Route
+app.get("/gigs/new", (req, res, next) => {
+  res.render("gigs/new");
+});
+
+// create route
+app.post("/gigs", async (req, res, next) => {
+  const gigs = req.body.gig;
+  await Gig.create(gigs);
+  console.log("added");
+  res.redirect("/gigs");
+});
+
 // show route
 app.get("/gigs/:id", async (req, res, next) => {
   const { id } = req.params;
