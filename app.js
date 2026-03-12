@@ -20,10 +20,17 @@ app.get("/", (req, res) => {
   res.send("Fiverr App Working");
 });
 
-// Index Route
+// index Route
 app.get("/gigs", async (req, res, next) => {
   const gigs = await Gig.find();
   res.render("gigs/index", { gigs });
+});
+
+// show route
+app.get("/gigs/:id", async (req, res, next) => {
+  const { id } = req.params;
+  const gigs = await Gig.findById(id);
+  res.render("gigs/show", { gigs });
 });
 
 // Port defining and DB connection

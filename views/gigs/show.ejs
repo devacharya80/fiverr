@@ -1,11 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Show</h1>
-  </body>
-</html>
+<% layout('layouts/boilerplate.ejs') %>
+
+<div class="container mt-4">
+  <div class="row">
+    <!-- LEFT SIDE -->
+    <div class="col-md-8">
+      <h2 class="mb-3"><%= gigs.title %></h2>
+
+      <img
+        src="<%= gigs.image %>"
+        class="img-fluid rounded mb-4"
+        style="width: 100%; height: 400px; object-fit: cover"
+      />
+
+      <h4>Description</h4>
+      <p class="text-muted"><%= gigs.description %></p>
+
+      <h5 class="mt-4">Category</h5>
+      <span class="badge bg-secondary"> <%= gigs.category %> </span>
+    </div>
+
+    <!-- RIGHT SIDE PRICE CARD -->
+    <div class="col-md-4">
+      <div class="card shadow-sm sticky-top" style="top: 100px">
+        <div class="card-body">
+          <h4 class="card-title">
+            ₹ <%= gigs.price.toLocaleString("en-IN") %>
+          </h4>
+
+          <p class="text-muted">One time service</p>
+
+          <a href="#" class="btn btn-success w-100 mb-2"> Continue </a>
+
+          <a href="/gigs" class="btn btn-outline-dark w-100"> Back </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
